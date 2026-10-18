@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
         addText(device, "MY DEVICE", 12, MUTED, true);
         addText(device, "Haylou Smart Watch 2 (LS02)", 18, INK, true);
         addText(device, "Status: Not connected", 15, Color.rgb(190, 92, 30), true);
-        addText(device, "Direct LS02 connection is not available yet. Android 4.0.4 lacks the standard BLE GATT API.", 13, MUTED, false);
+        addText(device, "Compatibility warning: this tablet model is specified with Bluetooth 3.0, while the LS02 requires BLE. Android 4.0.4 also lacks the standard BLE GATT API. Direct connection is not supported by this prototype.", 13, MUTED, false);
         Button connect = new Button(this);
         connect.setText("CHECK CONNECTION SUPPORT");
         connect.setOnClickListener(new View.OnClickListener() {
