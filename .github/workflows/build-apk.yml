@@ -12,11 +12,12 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Set up Java 8
+      # Current Android command-line tools require Java 17.
+      - name: Set up Java 17 for Android SDK tools
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '8'
+          java-version: '17'
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
@@ -25,6 +26,13 @@ jobs:
         run: |
           yes | sdkmanager --licenses
           sdkmanager "platforms;android-28" "build-tools;28.0.3"
+
+      # Android Gradle Plugin 3.5.4 needs Java 8.
+      - name: Set up Java 8 for legacy Gradle
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '8'
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
