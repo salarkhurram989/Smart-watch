@@ -10,7 +10,7 @@ The app includes a HAYLOU FUN-inspired original dashboard and a reporting interf
 
 ### Important compatibility limitation
 
-Android 4.0.4 does not provide the standard Android BLE GATT API (introduced in Android 4.3/API 18). The Haylou LS02 uses BLE, so direct communication from this tablet is not confirmed and may be impossible without a compatible legacy BLE implementation. Until the transport/protocol is implemented and tested against a real LS02, health data, battery, time sync, and notifications are marked unavailable rather than fabricated.
+Android 4.0.4 does not provide the standard Android BLE GATT API (introduced in Android 4.3/API 18). Published specifications for the exact SHW-M380K model list Bluetooth 3.0, not BLE. The Haylou LS02 uses BLE, so the documented tablet hardware is not expected to support a direct connection. A code-only workaround cannot add missing BLE radio capability. This must not be described as a working watch connection unless actual hardware testing proves otherwise. Until the transport/protocol is implemented and tested against a real LS02, health data, battery, time sync, and notifications are marked unavailable rather than fabricated.
 
 ## Build an APK
 
